@@ -1,34 +1,35 @@
 package com.coinomi.core.coins;
 
-import com.coinomi.core.coins.families.PeerFamily;
+import com.coinomi.core.coins.families.BitFamily;
+
 
 /**
- * @author dasource
+ * @author vuksa2103
  */
-public class CloakCoinMain extends PeerFamily {
+public class CloakCoinMain extends BitFamily {
     private CloakCoinMain() {
-        id = "shadowcash.main";
+        id = "cloakcoin.main";
 
-        addressHeader = 63;
-        p2shHeader = 125;
+        addressHeader = 27;
+        p2shHeader = 85;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
-        spendableCoinbaseDepth = 500;
+        spendableCoinbaseDepth = 100;
         dumpedPrivateKeyHeader = 191;
 
-        name = "ShadowCash (beta)";
-        symbol = "SDC";
-        uriScheme = "shadowcash";
-        bip44Index = 35;
+        name = "CloakCoin (beta)";
+        symbol = "CLOAK";
+        uriScheme = "cloakcoin";
+        bip44Index = 0;
         unitExponent = 8;
         feeValue = value(10000); // 0.0001 SDC
         minNonDust = value(1);
         softDustLimit = value(1000000); // 0.01 SDC
         softDustPolicy = SoftDustPolicy.AT_LEAST_BASE_FEE_IF_SOFT_DUST_TXO_PRESENT;
-        signedMessageHeader = toBytes("ShadowCash Signed Message:\n");
+        signedMessageHeader = toBytes("CloakCoin Signed Message:\n");
     }
 
     private static CloakCoinMain instance = new CloakCoinMain();
-    public static synchronized CloakCoinMain get() {
+    public static synchronized CoinType get() {
         return instance;
     }
 }

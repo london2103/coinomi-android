@@ -47,6 +47,7 @@ import com.coinomi.core.coins.VertcoinMain;
 import com.coinomi.core.coins.VpncoinMain;
 import com.coinomi.core.coins.RichcoinMain;
 import com.coinomi.core.coins.IxcoinMain;
+import com.coinomi.core.coins.CloakCoinMain;
 import com.coinomi.core.network.CoinAddress;
 import com.coinomi.stratumj.ServerAddress;
 import com.google.common.collect.ImmutableList;
@@ -213,6 +214,10 @@ public class Constants {
                                                     new ServerAddress("club-cce-2.coinomi.net", 5045)),
             new CoinAddress(RichcoinMain.get(),     new ServerAddress("richx-cce-1.coinomi.net", 5046),
                                                     new ServerAddress("richx-cce-2.coinomi.net", 5046)),
+
+            new CoinAddress(CloakCoinMain.get(),    new ServerAddress("192.168.1.11", 50001),
+                                                    new ServerAddress("192.168.1.11", 8000)),
+
             new CoinAddress(IxcoinMain.get(),       new ServerAddress("ixc-cce-1.coinomi.net", 5047),
                                                     new ServerAddress("ixc-cce-2.coinomi.net", 5047))
     );
@@ -264,6 +269,7 @@ public class Constants {
         COINS_ICONS.put(CoinID.CLUBCOIN_MAIN.getCoinType(), R.drawable.clubcoin);
         COINS_ICONS.put(CoinID.RICHCOIN_MAIN.getCoinType(), R.drawable.richcoin);
         COINS_ICONS.put(CoinID.IXCOIN_MAIN.getCoinType(), R.drawable.ixcoin);
+        COINS_ICONS.put(CoinID.CLOAKCOIN_MAIN.getCoinType(), R.drawable.cloakcoin);
 
         COINS_BLOCK_EXPLORERS = new HashMap<CoinType, String>();
         COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_MAIN.getCoinType(), "https://blockchain.info/tx/%s");
@@ -306,6 +312,7 @@ public class Constants {
         COINS_BLOCK_EXPLORERS.put(CoinID.EGULDEN_MAIN.getCoinType(), "https://chainz.cryptoid.info/efl/tx.dws?%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.RICHCOIN_MAIN.getCoinType(), "https://explorer.richcoin.us/transaction?transaction=%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.IXCOIN_MAIN.getCoinType(), "https://chainz.cryptoid.info/ixc/tx.dws?%s");
+        COINS_BLOCK_EXPLORERS.put(CoinID.CLOAKCOIN_MAIN.getCoinType(), "https://explorer.cloakcoin.com/tx/%s");
     }
 
     public static final CoinType DEFAULT_COIN = BitcoinMain.get();
@@ -353,6 +360,7 @@ public class Constants {
             RichcoinMain.get(),
             RubycoinMain.get(),
             ShadowCashMain.get(),
+            CloakCoinMain.get(),
             VergeMain.get(),
             VertcoinMain.get(),
             VpncoinMain.get(),
